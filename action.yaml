@@ -1,0 +1,25 @@
+kind: live
+name: Run Tensorboard
+author: Alexey Naiden
+descr: runs Tensorboard
+
+inputs:
+  http_port:
+    descr: http port
+    default: "6006"
+  http_auth:
+    descr: whether to use http auth
+    default: "True"
+  volumes_results_remote:
+    descr: reference to a results volume
+
+job:
+    image: tensorflow/tensorflow:latest
+    http_port: $[[ inputs.http_port ]]
+    http_auth: $[[ inputs.http_auth ]]
+    preset: cpu-small
+    browse: True
+    detach: True
+    volumes:
+      - "$[[ inputs.volumes_results_ref ]]:/project/results:ro"
+    cmd: tensorboard --host=0.0.0.0 --logdir=/project/results
