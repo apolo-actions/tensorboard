@@ -1,0 +1,18 @@
+kind: live
+title: Test
+
+defaults:
+  preset: cpu-small
+  life_span: 1h
+
+volumes:
+  results:
+    remote: "storage:"
+    mount: /project/results
+    local: results
+
+jobs:
+  tensorboard:
+    action: gh:neuro-actions/tensorboard@master
+    args:
+      volumes_results_remote: $[[ volumes.results.remote ]]
