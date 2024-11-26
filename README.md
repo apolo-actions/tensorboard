@@ -1,6 +1,6 @@
-# Tensorboard action for neuro-flow
+# Tensorboard action for apolo-flow
 
-This is a [`neuro-flow`](https://github.com/neuro-inc/neuro-flow) action launching a [Tensorboard](https://www.tensorflow.org/tensorboard/) instance.
+This is a [`apolo-flow`](https://github.com/neuro-inc/neuro-flow) action launching a [Tensorboard](https://www.tensorflow.org/tensorboard/) instance.
 
 The only required argument is a reference to a storage folder with your experiment results.
 
@@ -9,7 +9,7 @@ The only required argument is a reference to a storage folder with your experime
 ```
 jobs:
   tensorboard:
-    action: gh:neuro-actions/tensorboard@master
+    action: gh:apolo-actions/tensorboard@master
     args:
       volumes_results_remote: $[[ volumes.results.remote ]]
 ```

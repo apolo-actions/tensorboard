@@ -13,6 +13,6 @@ volumes:
 
 jobs:
   tensorboard:
-    action: gh:neuro-actions/tensorboard@master
+    action: gh:apolo-actions/tensorboard@master
     args:
       volumes_results_remote: $[[ volumes.results.remote ]]
