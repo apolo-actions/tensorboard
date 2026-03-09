@@ -18,10 +18,13 @@ inputs:
   preset:
     descr: resource preset to run tensorflow
     default: "cpu-small"
+  image:
+    descr: container image with tensorboard preinstalled
+    default: ghcr.io/neuro-actions/tensorboard:latest
 
 job:
   name: $[[ inputs.job_name ]]
-  image: tensorflow/tensorflow:latest
+  image: $[[ inputs.image ]]
   http_port: $[[ inputs.http_port ]]
   http_auth: $[[ inputs.http_auth ]]
   preset: $[[ inputs.preset ]]
