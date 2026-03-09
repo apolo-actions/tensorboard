@@ -15,15 +15,18 @@ inputs:
     default: "True"
   volumes_results_remote:
     descr: reference to a results volume
+  preset:
+    descr: resource preset to run tensorflow
+    default: "cpu-small"
 
 job:
-    name: $[[ inputs.job_name ]]
-    image: tensorflow/tensorflow:latest
-    http_port: $[[ inputs.http_port ]]
-    http_auth: $[[ inputs.http_auth ]]
-    preset: cpu-small
-    browse: True
-    detach: True
-    volumes:
-      - "$[[ inputs.volumes_results_remote ]]:/project/results:ro"
-    cmd: tensorboard --host=0.0.0.0 --logdir=/project/results
+  name: $[[ inputs.job_name ]]
+  image: tensorflow/tensorflow:latest
+  http_port: $[[ inputs.http_port ]]
+  http_auth: $[[ inputs.http_auth ]]
+  preset: $[[ inputs.preset ]]
+  browse: True
+  detach: True
+  volumes:
+    - "$[[ inputs.volumes_results_remote ]]:/project/results:ro"
+  cmd: tensorboard --host=0.0.0.0 --logdir=/project/results
