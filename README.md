@@ -1,6 +1,6 @@
 # Tensorboard action for apolo-flow
 
-This is a [`apolo-flow`](https://github.com/neuro-inc/neuro-flow) action launching a [Tensorboard](https://www.tensorflow.org/tensorboard/) instance.
+This is a [`apolo-flow`](https://github.com/neuro-inc/apolo-flow) action launching a [Tensorboard](https://www.tensorflow.org/tensorboard/) instance.
 
 The only required argument is a reference to a storage folder with your experiment results.
 
@@ -58,4 +58,15 @@ Reference to a volume with experiment results.
 ```
 args:
 	volumes_results_remote: $[[ volumes.results.remote ]]
+```
+
+### `preset`
+
+Configure a resource preset used to run a tensorboard job. Default value is 'cpu-small'.
+
+### Example
+
+```
+args:
+	preset: cpu-mini
 ```
