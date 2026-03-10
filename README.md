@@ -70,3 +70,15 @@ Configure a resource preset used to run a tensorboard job. Default value is 'cpu
 args:
 	preset: cpu-mini
 ```
+
+### `image`
+
+Configure a container image used to run a tensorboard job. Default value is 'hcr.io/apolo-actions/tensorboard:latest'.
+
+### Example
+
+```
+args:
+	image: hcr.io/apolo-actions/tensorboard:latest
+```
+

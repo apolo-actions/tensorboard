@@ -20,7 +20,7 @@ inputs:
     default: "cpu-small"
   image:
     descr: container image with tensorboard preinstalled
-    default: ghcr.io/neuro-actions/tensorboard:latest
+    default: ghcr.io/apolo-actions/tensorboard:latest
 
 job:
   name: $[[ inputs.job_name ]]
